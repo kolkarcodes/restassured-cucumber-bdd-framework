@@ -31,7 +31,6 @@ public class ProductSteps {
     @Given("response should contain products")
     public void response_should_contain_products() {
         int productCount = response.jsonPath().getList("data").size();
-        System.out.println("Total products: " + productCount);
         Assert.assertTrue(productCount > 0);
     }
 
