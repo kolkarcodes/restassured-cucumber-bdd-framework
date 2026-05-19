@@ -1,6 +1,6 @@
 Feature: Product List API
 
-@smoke
+@smoke @product
   Scenario: Verify all products are returned successfully
 
     When user sends GET request for product list

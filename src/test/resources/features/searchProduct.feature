@@ -1,9 +1,17 @@
 
 
-Feature: Product List API
+Feature: Search Product API Testing
 
-  Scenario: Verify all products are returned successfully
+  @searchProduct
+  Scenario Outline: Verify products are returned successfully for different search keyword
 
-    When user sends GET request for product list
+    When user searches product with keyword "<searchKeyword>"
     Then response status code should be 200
-    And response should contain products
+    And response should contain searched product "<searchKeyword>"
+    Examples:
+    | searchKeyword |
+    |Thor           |
+    | Hammer        |
+    |Pliers         |
+    |Wrench         |
+
