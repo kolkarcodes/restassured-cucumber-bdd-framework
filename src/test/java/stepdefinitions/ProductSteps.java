@@ -10,23 +10,16 @@ import org.testng.Assert;
 public class ProductSteps {
     Response response;
 
-    @Given("user sets product list API endpoint")
-    public void user_sets_product_list_api_endpoint() {
-        RestAssured.baseURI = "https://api.practicesoftwaretesting.com";
-    }
-
     @When("user sends GET request for product list")
     public void user_sends_product_list_api_endpoint() {
         response = RestAssured.given()
                 .when()
                 .get("/products");
         response.prettyPrint();
+        CommonSteps.response = response;
     }
+    //common share
 
-    @Then("response status code should be {int}")
-    public void response_status_code_should_be_200OK(Integer statusCode) {
-        Assert.assertEquals(response.statusCode(), 200);
-    }
 
     @Given("response should contain products")
     public void response_should_contain_products() {
