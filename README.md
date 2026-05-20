@@ -2,7 +2,7 @@
 Restassured cucumber bdd framework for testing API
 
 ## Overview
-A comprehensive REST Assured and Cucumber BDD framework for automated API testing. This framework combines the power of REST Assured for API testing with Cucumber's BDD approach for readable and maintainable test scenarios.
+A comprehensive REST Assured and Cucumber BDD framework for automated API testing. This framework combines the power of REST Assured for API testing with Cucumber's BDD approach for readable and ma[...]
 
 ## Language Composition
 - **Java**: 77.2%
@@ -14,11 +14,13 @@ A comprehensive REST Assured and Cucumber BDD framework for automated API testin
 - ✅ Tag-based test execution
 - ✅ Easy test organization and maintenance
 - ✅ Comprehensive API validation
+- ✅ Allure Report integration for detailed test reporting
 
 ## Prerequisites
 - Java 8 or higher
 - Maven 3.6 or higher
 - Git
+- Allure 2.x (for viewing reports)
 
 ## Installation
 
@@ -72,6 +74,28 @@ mvn clean test "-Dcucumber.filter.tags=@smoke and @login"
 mvn clean test "-Dcucumber.filter.tags=not @negative"
 ```
 
+## Allure Report
+
+### Viewing Allure Report
+
+After running tests, generate and view the Allure report using the following command:
+
+```bash
+allure serve ./target/allure-results
+```
+
+This command will:
+- Generate the Allure report from test results
+- Start a local web server
+- Automatically open the report in your default browser
+
+The report provides detailed insights into:
+- Test execution summary
+- Pass/Fail statistics
+- Test timeline
+- Detailed logs and attachments
+- Error traces for failed tests
+
 ## Project Structure
 ```
 restassured-cucumber-bdd-framework/
@@ -93,6 +117,7 @@ restassured-cucumber-bdd-framework/
 - **Cucumber**: BDD testing framework
 - **JUnit**: Test execution framework
 - **Maven**: Build automation tool
+- **Allure Report**: Advanced test report generation and visualization
 
 ## Contributing
 Feel free to submit issues and enhancement requests!
