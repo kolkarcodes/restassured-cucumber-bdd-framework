@@ -14,4 +14,7 @@ Feature: Search Product API Testing
     | Hammer        |
     |Pliers         |
     |Wrench         |
+    | Screwdriver |
+    | Saw         |
+    | Drill       |
 
