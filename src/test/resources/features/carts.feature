@@ -1,6 +1,6 @@
 
 
-Feature: cart API Testing
+Feature: Cart API Testing
 
   @carts  @smoke
   Scenario: Verify user can add product to cart successfully
