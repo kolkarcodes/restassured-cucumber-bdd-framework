@@ -6,18 +6,21 @@ import io.qameta.allure.*;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.Assert;
+
 @Epic("E-Commerce API")
 @Feature("SearchProduct API")
 public class SearchProductSteps {
     Response response;
+
     @Story("Search Product By Keyword")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verify products are returned successfully using search keyword")
 
     @When("user searches product with keyword {string}")
     public void user_searches_product_with_keyword(String keyword) {
-        response = RestAssured.given()
-                .queryParam("q",keyword)
+        response = RestAssured
+                .given()
+                .queryParam("q", keyword)
                 .when()
                 .get("/products/search");
         response.prettyPrint();

@@ -7,6 +7,7 @@ import io.qameta.allure.*;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.Assert;
+
 @Epic("E-Commerce API")
 @Feature("Product API")
 
@@ -19,7 +20,8 @@ public class ProductSteps {
 
     @When("user sends GET request for product list")
     public void user_sends_product_list_api_endpoint() {
-        response = RestAssured.given()
+        response = RestAssured
+                .given()
                 .when()
                 .get("/products");
         response.prettyPrint();
