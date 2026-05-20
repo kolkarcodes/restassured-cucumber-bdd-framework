@@ -20,7 +20,7 @@ public class CartSteps {
 
     @Story("user can add product to cart")
     @Severity(SeverityLevel.CRITICAL)
-    @Description("Verify user can add product to cart successfully")
+    @Description("Verify authenticated user can add product to cart successfully")
 
     @When("user adds product {string} with quantity {int} to cart")
     public void user_adds_product_with_quantity_to_cart(String product_id, Integer quantity) {
@@ -33,6 +33,9 @@ public class CartSteps {
 
         response = RestAssured
                 .given()
+                .header(
+                        "Authorization",
+                        "Bearer " + AuthSteps.token)
                 .contentType(ContentType.JSON)
                 .body(requestBody)
                 .when()

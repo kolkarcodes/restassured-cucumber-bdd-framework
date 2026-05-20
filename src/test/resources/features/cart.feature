@@ -1,8 +1,9 @@
-
-
 Feature: Cart API Testing
 
-  @carts  @smoke
+  Background:
+    Given user is authenticated
+
+  @cart  @smoke
   Scenario: Verify user can add product to cart successfully
     When user adds product "01KS2D8G8F7Y32SXJJD3M0TPHT" with quantity 1 to cart
     Then response status code should be 201
